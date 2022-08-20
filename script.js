@@ -7,18 +7,20 @@ function calcCHD(currentCHD) {
 function calcRps(current_rpm) {
    let RPM_100_stacks = current_rpm * 1.5;
    let roundPerSecond = RPM_100_stacks / 60;
-   console.log(`Your Round Per Second @100 stacks = ${roundPerSecond} Rps`);
+   console.log(`Your Current Weapon's Round Per Second @100 stacks = ${roundPerSecond} RPS`);
    return roundPerSecond;
 }
 
 function showRpm(yourRpm) {
    let yourRpm100 = yourRpm * 1.5;
    let data = [];
+   console.log(`Your Current Weapon's RPM = ${yourRpm} RPM`);
+   console.log(`Your RPM @100 stacks = ${yourRpm100} RPM`);
    for (let i = 0; i < 25; i++) {
       yourRpm100 = yourRpm100 - 3.6;
       data.push(Number(yourRpm100.toFixed(1)));
    }
-   //console.log(data);
+
    return data;
 }
 
