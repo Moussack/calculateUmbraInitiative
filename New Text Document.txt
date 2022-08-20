@@ -1,0 +1,59 @@
+100% = x 2
+110% = x 1.1 
+etc..
+
+100dps PGC30 chd187 rpm180(3 round/s) = 373,1
+dps = 373,1 x 3 = 1.119 (steady)
+dps after 10 sec = 11.190 (steady)
+dps after 12 sec = 13.428 (steady)
+
+12.654,9
+
+100dps chd225 rpm270(4,5 round/s) = 325
+dps = 325 x 4,5 = 1.462,5 (di peak)
+dps after 10 sec 13.747.5
+dps after 12 sec 16.263
+
+
+325 x 4,5 = 1.462,5 (270) 1sec
+325 x 4,44 = 1.443 (266,4) 2sec
+325 x 4,38 = 1.423,5 (262,8) 3sec
+325 x 4,32 = 1.404 (259,2) 4sec
+325 x 4,26 = 1.384,5 (255,6) 5sec
+325 x 4,2 = 1.365 (252) 6sec
+325 x 4,14 = 1.345,5 (248,4) 7sec
+325 x 4,08 = 1.326 (244,8) 8sec
+325 x 4,02 = 1.306,5 (241,2) 9sec
+325 x 3,96 = 1.287 (237,6) 10sec
+
+325 x 3,9 = 1.267,5 (234) 11sec
+325 x 3,84 = 1.248 (230,4) 12sec
+
+325 x 3,84 = 1.248 (230,4) 13sec
+325 x 3,84 = 1.248 (230,4) 14sec
+325 x 3,84 = 1.248 (230,4) 15sec
+325 x 3,84 = 1.248 (230,4) 16sec
+325 x 3,84 = 1.248 (230,4) 17sec
+325 x 3,84 = 1.248 (230,4) 18sec
+325 x 3,84 = 1.248 (230,4) 19sec
+325 x 3,84 = 1.248 (230,4) 20sec
+325 x 3,84 = 1.248 (230,4) 21sec
+325 x 3,84 = 1.248 (230,4) 22sec
+325 x 3,84 = 1.248 (230,4) 23sec
+325 x 3,84 = 1.248 (230,4) 24sec
+325 x 3,84 = 1.248 (230,4) 25sec
+
+
+
+
+
+1425.2+1388.5+1352.2+1316.3+1281.0+1246.1+1211.8+1177.9+1144.4+1111.5+1462.5
+
+script.js:25 1352.2 DPS at 213CHD at 4.32RPS at 3sec
+script.js:25 1316.3 DPS at 209CHD at 4.26RPS at 4sec
+script.js:25 1281.0 DPS at 205CHD at 4.20RPS at 5sec
+script.js:25 1246.1 DPS at 201CHD at 4.14RPS at 6sec
+script.js:25 1211.8 DPS at 197CHD at 4.08RPS at 7sec
+script.js:25 1177.9 DPS at 193CHD at 4.02RPS at 8sec
+script.js:25 1144.4 DPS at 189CHD at 3.96RPS at 9sec
+script.js:25 1111.5 DPS at 185CHD at 3.90RPS at 10sec
