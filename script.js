@@ -4,11 +4,22 @@ function calcCHD(currentCHD) {
    return CHD_100_stacks;
 }
 
-function calcRpm(rpm) {
-   let RPM_100_stacks = rpm * 1.5;
+function calcRps(current_rpm) {
+   let RPM_100_stacks = current_rpm * 1.5;
    let roundPerSecond = RPM_100_stacks / 60;
    console.log(`Your Round Per Second @100 stacks = ${roundPerSecond} Rps`);
    return roundPerSecond;
+}
+
+function showRpm(yourRpm) {
+   let yourRpm100 = yourRpm * 1.5;
+   let data = [];
+   for (let i = 0; i < 25; i++) {
+      yourRpm100 = yourRpm100 - 3.6;
+      data.push(Number(yourRpm100.toFixed(1)));
+   }
+   //console.log(data);
+   return data;
 }
 
 function calcUmbra(weaponDmg, totalCHD, totalRPS) {
@@ -23,12 +34,13 @@ let rpsData = [];
 let chdData = [];
 let dataFinal = [];
 
-let rps = calcRpm(180); // <-- ENTER YOUR CURRENT WEAPON's RPM HERE
+let rpm = showRpm(180); // <-- ENTER YOUR CURRENT WEAPON's RPM HERE
+let rps = calcRps(180); // <-- ENTER YOUR CURRENT WEAPON's RPM HERE
 let chd = calcCHD(125); // <-- ENTER YOUR CURRENT CHD HERE
 let wpnDmg = 100; // <-- ENTER YOUR WEAPON DMG HERE
 
 // Output
-console.log(`${calcUmbra(wpnDmg, chd, rps).toFixed(1)} DPS at ${chd}CHD at ${rps}RPS at 0 sec`);
+console.log(`${calcUmbra(wpnDmg, chd, rps).toFixed(1)} DPS at ${chd}% CHD at ${rps} RPS(${270} RPM) at 0 sec`);
 for (let i = 0; i < 25; i++) {
    rps = rps - 0.06;
    rpsData.push(rps.toFixed(2));
@@ -38,7 +50,7 @@ for (let i = 0; i < 25; i++) {
 
    let dpsFinal = calcUmbra(wpnDmg, chdData[i], rpsData[i]).toFixed(1);
    dataFinal.push(dpsFinal);
-   console.log(`${dataFinal[i]} DPS at ${chdData[i]}CHD at ${rpsData[i]}RPS at ${i + 1}sec`);
+   console.log(`${dataFinal[i]} DPS at ${chdData[i]}% CHD at ${rpsData[i]} RPS(${rpm[i]} RPM) at ${i + 1}sec`);
 }
 
 // calc dps at certain secs
