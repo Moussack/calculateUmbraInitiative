@@ -1,18 +1,34 @@
+function calcCHD(currentCHD) {
+   let CHD_100_stacks = currentCHD + 100;
+   console.log(`Your Crit Hit Damage @100 stacks = ${CHD_100_stacks}%`);
+   return CHD_100_stacks;
+}
+
+function calcRpm(rpm) {
+   let RPM_100_stacks = rpm * 1.5;
+   let roundPerSecond = RPM_100_stacks / 60;
+   console.log(`Your Round Per Second @100 stacks = ${roundPerSecond} Rps`);
+   return roundPerSecond;
+}
+
+function calcUmbra(weaponDmg, totalCHD, totalRPS) {
+   let critDmg = totalCHD / 100 + 1;
+   let totalDmg = weaponDmg * critDmg;
+   let dps = totalDmg * totalRPS;
+   return dps;
+}
+
+//  ------------------------LOGIC--------------------------------
 let rpsData = [];
 let chdData = [];
 let dataFinal = [];
 
-function calcUmbra(firstDmg, maxChd, rps) {
-   let critDmg = maxChd / 100 + 1;
-   let dmg = firstDmg * critDmg;
-   let dps = dmg * rps;
-   return dps;
-}
+let rps = calcRpm(180); // <-- ENTER YOUR CURRENT WEAPON's RPM HERE
+let chd = calcCHD(125); // <-- ENTER YOUR CURRENT CHD HERE
+let wpnDmg = 100; // <-- ENTER YOUR WEAPON DMG HERE
 
-let rps = 4.5;
-let chd = 225;
-
-console.log(`${calcUmbra(100, chd, rps).toFixed(1)} DPS at ${chd}CHD at ${rps}RPS at 0 sec`);
+// Output
+console.log(`${calcUmbra(wpnDmg, chd, rps).toFixed(1)} DPS at ${chd}CHD at ${rps}RPS at 0 sec`);
 for (let i = 0; i < 25; i++) {
    rps = rps - 0.06;
    rpsData.push(rps.toFixed(2));
@@ -20,7 +36,7 @@ for (let i = 0; i < 25; i++) {
    chd = chd - 4;
    chdData.push(chd);
 
-   let dpsFinal = calcUmbra(100, chdData[i], rpsData[i]).toFixed(1);
+   let dpsFinal = calcUmbra(wpnDmg, chdData[i], rpsData[i]).toFixed(1);
    dataFinal.push(dpsFinal);
    console.log(`${dataFinal[i]} DPS at ${chdData[i]}CHD at ${rpsData[i]}RPS at ${i + 1}sec`);
 }
